@@ -4,15 +4,15 @@ tags: meta Hakyll MathML MathJax
 ----------------------------------
 
 Having just started with [Hakyll](http://jaspervdj.be/hakyll/), it seems fitting
-to make this first post about how to get this damn thing off of the ground.
+to make the first post about how to get this damn thing off of the ground.
 
 Fortunately, Hakyll's benevolent creator, Jasper van der Jeugt, has decided to
 make "blog site for noobs" the default setup after a new install.
 
-Unfortunately, the stylish blogger, having shunned tumblr and WordPress, is not
-satisfied with this. There are two major features missing, math support and
-syntax highlighting. Enabling them isn't terrible difficult, but not terribly
-obvious either.
+*Unfortunately*, the stylish blogger, having shunned tumblr and WordPress, is
+not satisfied with this. There are two major features missing, **math support**
+and **syntax highlighting**. Enabling them isn't terribly difficult, but it's
+not terribly obvious either. I'm trying to fix that.
 
 Starting from scratch, we'll do both.
 
@@ -29,8 +29,8 @@ Done?
 
 No?
 
-Well everyone knows you should read instructions fully before you start anyway
-so let's keep going.
+Well everyone knows you should always read instructions fully before you start
+a new project anyway so let's keep going.
 
 Pick a home for your new site and run `hakyll-init` there.
 
