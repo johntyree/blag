@@ -16,3 +16,20 @@ pre.sourceCode span.al { color: red; font-weight: bold; }
 pre.sourceCode span.fu { color: #06287e; }
 pre.sourceCode span.re { }
 pre.sourceCode span.er { color: red; font-weight: bold; }
+
+code {
+    background-color: #fafaff;
+    border: 2px solid #efeffa;
+    border-radius: 0.35em;
+    font-size: 0.70em;
+    padding: 0.20em;
+}
+
+pre code {
+    background-color: #ffffff;
+    border: None;
+    border-radius: 0%;
+    font-size: 1em;
+    padding: 0;
+}
+
