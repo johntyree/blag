@@ -70,9 +70,7 @@ settings don't include support for MathML, let's add it.
 pandocMathCompiler = pandocCompilerWith readers writers
   where
     readers = def { readerExtensions = pandocExtensions }
-    writers = def {
-              writerHTMLMathMethod = MathML (Just "")
-            }
+    writers = def { writerHTMLMathMethod = MathML (Just "") }
 ```
 
 What we've done here is simply defined a new compiler with some fancier options.
@@ -83,7 +81,7 @@ choice here, but make sure it includes `Ext_tex_math_dollars`.
 
 The writer is a little more straight forward. The default options are all fine
 with the exception of `writerHTMLMathMethod`, which we change to output
-[MathML](http://mathml.org).
+[MathML](https://en.wikipedia.org/wiki/MathML "MathML - Wikipedia, the free encyclopedia").
 
 Alright we're almost there. Plug this new compiler in in place of the default
 one and we'll be done with `site.hs` entirely.
@@ -105,7 +103,8 @@ browsers.") library to take us the rest of the way.
 
 Open the default template for all our pages, `templates/default.html` and look
 for the closing `</head>` tag. Just *before* it we'll insert the MathJax script
-and a config option to enable MathML support and all the goodies.
+and a config option to enable MathML support and MathJax goodies like
+click-to-zoom.
 
 ```html
 ...
@@ -133,7 +132,7 @@ and give it a whirl:
 TADA!
 -----
 
-Now that we've done all the hard work, we're just one line away from syntax
+Now that we've done all the hard work, we're just one step away from syntax
 highlighting too.
 
 In general, Pandoc will generate the appropriate CSS to color the code, but
@@ -152,7 +151,7 @@ your own if you want to use line numbers.**
 Once you have a CSS file, save it to `css/syntax.css`.
 
 Again we'll need to open up `templates/default.html` and make a small addition.
-Just above where we added the MathJax library, we'll add a link to our new CSS.
+Just above where we added the MathJax library we'll add a link to our new CSS.
 
 ```html
 ...
