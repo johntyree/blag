@@ -149,9 +149,6 @@ mine](https://gist.github.com/raw/4660579/84f292e8f546693f999443935307609233ba7c
 You can generate your own using a different color theme by simply running Pandoc
 on your markdown file with the appropriate flags. Check out `pandoc help`.
 
-**Note: Using line numbers will *break this CSS file*. You will need to generate
-your own if you want to use line numbers.**
-
 Once you have a CSS file, save it to `css/syntax.css`.
 
 Again we'll need to open up `templates/default.html` and make a small addition.
