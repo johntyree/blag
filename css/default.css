@@ -38,7 +38,16 @@ div#footer {
     font-size: 12px;
     margin-top: 30px;
     padding: 12px 0px 12px 0px;
+}
+
+.right {
+    float: right;
     text-align: right;
+}
+
+.left {
+    float: left;
+    text-align: left;
 }
 
 h1 {
