@@ -1,9 +1,13 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
-import           Control.Applicative ((<$>))
-import           Data.Monoid         (mappend)
-import           Hakyll
-import           Text.Pandoc
+import Control.Applicative   ((<$>))
+import Crypto.Hash.MD5
+import Data.ByteString.Char8 (pack, unpack)
+import Data.Char
+import Data.Hex              (hex)
+import Data.Monoid           (mappend)
+import Hakyll
+import Text.Pandoc
 
 
 --------------------------------------------------------------------------------
@@ -47,7 +51,9 @@ main = hakyllWith config $ do
     match "index.html" $ do
         route idRoute
         compile $ do
-            let indexCtx = field "posts" $ \_ -> postList (take 3 . recentFirst)
+            let indexCtx =
+                    field "posts" (\_ -> postList (take 3 . recentFirst)) `mappend`
+                    constField "emailHash" emailHash
 
             getResourceBody
                 >>= applyAsTemplate indexCtx
@@ -86,3 +92,6 @@ pandocMathCompiler = pandocCompilerWith readers writers
             , writerHtml5 = True
             }
 
+--------------------------------------------------------------------------------
+-- gravatarLink :: String
+emailHash = map toLower . unpack . hex . hash $ pack "johntyree@gmail.com"
