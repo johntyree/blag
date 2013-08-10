@@ -1,5 +1,6 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
+import Control.Monad         (forM_)
 import Crypto.Hash.MD5
 import Data.ByteString.Char8 (pack, unpack)
 import Data.Char             (toLower)
@@ -12,9 +13,8 @@ import Text.Pandoc
 --------------------------------------------------------------------------------
 main :: IO ()
 main = hakyllWith config $ do
-    match "images/*" $ do
-        route   idRoute
-        compile copyFileCompiler
+
+    forM_ ["favicon.ico", "images/*"] $ \p -> match p asIs
 
     match "css/*" $ do
         route   idRoute
@@ -65,6 +65,9 @@ main = hakyllWith config $ do
 
 
 --------------------------------------------------------------------------------
+
+asIs :: Rules ()
+asIs = route idRoute >> compile copyFileCompiler
 
 pandocMathCompiler = pandocCompilerWith readers writers
   where
