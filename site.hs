@@ -1,11 +1,10 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
-import Control.Applicative   ((<$>))
 import Crypto.Hash.MD5
 import Data.ByteString.Char8 (pack, unpack)
-import Data.Char
+import Data.Char             (toLower)
 import Data.Hex              (hex)
-import Data.Monoid           (mappend)
+import Data.Monoid           ((<>))
 import Hakyll
 import Text.Pandoc
 
@@ -21,15 +20,15 @@ main = hakyllWith config $ do
         route   idRoute
         compile compressCssCompiler
 
-    match (fromList ["about.md", "contact.md"]) $ do
+    match (fromList ["about.rst", "contact.markdown"]) $ do
         route   $ setExtension "html"
-        compile $ pandocMathCompiler
+        compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/default.html" defaultContext
             >>= relativizeUrls
 
     match "posts/*" $ do
         route $ setExtension "html"
-        compile $ pandocMathCompiler
+        compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
@@ -37,10 +36,10 @@ main = hakyllWith config $ do
     create ["archive.html"] $ do
         route idRoute
         compile $ do
-            let archiveCtx =
-                    field "posts" (\_ -> postList recentFirst) `mappend`
-                    constField "title" "Archives"              `mappend`
-                    defaultContext
+            posts <- recentFirst =<< loadAll "posts/*"
+            let archiveCtx = listField "posts" postCtx (return posts)
+                          <> constField "title" "Archives"
+                          <> defaultContext
 
             makeItem ""
                 >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
@@ -51,38 +50,21 @@ main = hakyllWith config $ do
     match "index.html" $ do
         route idRoute
         compile $ do
-            let indexCtx =
-                    field "posts" (\_ -> postList (take 3 . recentFirst)) `mappend`
-                    constField "emailHash" emailHash
+            posts <- recentFirst =<< loadAll "posts/*"
+            let indexCtx = listField "posts" postCtx (return (take 3 posts))
+                        <> constField "title" "Home"
+                        <> constField "emailHash" emailHash
+                        <> defaultContext
 
             getResourceBody
                 >>= applyAsTemplate indexCtx
-                >>= loadAndApplyTemplate "templates/default.html" postCtx
+                >>= loadAndApplyTemplate "templates/default.html" indexCtx
                 >>= relativizeUrls
 
     match "templates/*" $ compile templateCompiler
 
 
-config :: Configuration
-config = defaultConfiguration
-    { deployCommand = "rsync --checksum --delete -av _site/ \
-                      \ vegetarianrage@john.bitsurge.net:john.bitsurge.net/blag"
-    }
-
 --------------------------------------------------------------------------------
-postCtx :: Context String
-postCtx =
-    dateField "date" "%B %e, %Y" `mappend`
-    defaultContext
-
-
---------------------------------------------------------------------------------
-postList :: ([Item String] -> [Item String]) -> Compiler String
-postList sortFilter = do
-    posts   <- sortFilter <$> loadAll "posts/*"
-    itemTpl <- loadBody "templates/post-item.html"
-    list    <- applyTemplateList itemTpl postCtx posts
-    return list
 
 pandocMathCompiler = pandocCompilerWith readers writers
   where
@@ -92,6 +74,14 @@ pandocMathCompiler = pandocCompilerWith readers writers
             , writerHtml5 = True
             }
 
---------------------------------------------------------------------------------
--- gravatarLink :: String
+postCtx :: Context String
+postCtx = dateField "date" "%B %e, %Y"
+       <> defaultContext
+
+config :: Configuration
+config = defaultConfiguration
+    { deployCommand = "rsync --checksum --delete -av _site/ \
+                      \ tyree@john.bitsurge.net:john.bitsurge.net/blag"
+    }
+
 emailHash = map toLower . unpack . hex . hash $ pack "johntyree@gmail.com"
