@@ -2,6 +2,7 @@
 title: Contact
 ---
 
-I'm an MSc Computational Science student at the University of Amsterdam.
+I work at Enthought, Inc. in Austin, TX writing python apps to change the way
+the world does science and engineering.
 
-You can check out my [GitHub](http://github.com/johntyree)... or something.
+Find me on [GitHub](http://github.com/johntyree)
