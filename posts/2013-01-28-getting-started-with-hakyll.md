@@ -172,7 +172,7 @@ And a quick test:
 
     ```haskell
     sum :: Num a => a
-    sum [ x / succ x | x <- [0..]]
+    sum [x / succ x | x <- [0..]]
     ```
 ````
 
@@ -185,7 +185,7 @@ $\sum_{i=0}^\infty \frac{i}{i+1}$
 
 ```haskell
 sum :: Num a => a
-sum [ x / succ x | x <- [0..]]
+sum [x / succ x | x <- [0..]]
 ```
 </div>
 

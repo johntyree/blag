@@ -64,7 +64,7 @@ main = hakyllWith config $ do
     match "templates/*" $ compile templateCompiler
 
 
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 asIs :: Rules ()
 asIs = route idRoute >> compile copyFileCompiler
