@@ -9,11 +9,12 @@ to be embedded in my application. Enter,
 [Quick-and-Dirty-C](https://github.com/johntyree/QDC). It's a
 [growing](2013-01-30-cuda-gcc-47.html) collection of tricks, tweaks, and handy
 functions for doing the kinds of trivial things that everyone expects will take
-5 minutes to write, but in fact require many hours to get right. In this post
-I'll introduce the most recent addition, a small collection of functions for
-filtering a buffer of data through another program via `stdin` and `stdout`. So
-if you weren't planning on using strlen() for some reason, you might filter
-your string through `wc -c`, doing the equivalent of this:
+5 minutes to write, but in fact require many hours to write and many days to
+get right. In this post I'll introduce the most recent addition, a small
+collection of functions for filtering a buffer of data through another program
+via `stdin` and `stdout`. So if you weren't planning on using strlen() for some
+reason, you might filter your string through `wc -c`, doing the equivalent of
+this:
 
     $ echo "Hello, Monde!" | wc -c.
 
