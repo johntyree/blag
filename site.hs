@@ -51,7 +51,7 @@ main = hakyllWith config $ do
         route idRoute
         compile $ do
             posts <- recentFirst =<< loadAll "posts/*"
-            let indexCtx = listField "posts" postCtx (return (take 3 posts))
+            let indexCtx = listField "posts" postCtx (return (take 10 posts))
                         <> constField "title" "Home"
                         <> constField "emailHash" emailHash
                         <> defaultContext
@@ -87,4 +87,4 @@ config = defaultConfiguration
                       \ tyree@john.bitsurge.net:john.bitsurge.net/blag"
     }
 
-emailHash = map toLower . unpack . hex . hash $ pack "johntyree@gmail.com"
+emailHash = map toLower . unpack . hex $ hash "johntyree@gmail.com"
