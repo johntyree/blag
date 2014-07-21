@@ -6,6 +6,14 @@ body {
     width: 800px;
 }
 
+div#content {
+    width: 700px;
+}
+
+p.caption {
+    visibility: hidden;
+}
+
 div#header {
     border-bottom: 2px solid black;
     margin-bottom: 30px;
