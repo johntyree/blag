@@ -52,7 +52,7 @@ I eventually settled on a little bash script that handles things perfectly. It
 allows you to select between multiple cams and names the file according to
 the current date and time.
 
-```bash
+```{.bash .sourceCode .numberLines}
 #!/bin/bash
 
 # Choose a camera
