@@ -60,7 +60,12 @@ executable site
   -- other-extensions:
 
   -- Other library packages from which modules are imported.
-  build-depends:       base >=4.7 && <4.8
+  build-depends:       base >=4.7 && <4.8,
+                       hex,
+                       cryptohash,
+                       bytestring,
+                       hakyll >=4.5,
+                       pandoc
 
   -- Directories containing source files.
   -- hs-source-dirs:
