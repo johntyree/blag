@@ -5,7 +5,7 @@ tags: Hack ffmpeg piet
 
 We got a dog recently and as you can see, he's adorable,
 
-<img src=/../images/piet01.jpg />
+![Piety Pie](/images/piet01.jpg)
 
 Unfortunately, he has a bit of separation anxiety when we go out. It's not
 uncommon, but can lead to some pretty destructive behavior, destroying
@@ -81,4 +81,4 @@ ffmpeg -r $((FPS * 3)) -i $OUTPUTFILE -r $((FPS * 3)) whatever.gif
 
 Here's an example of our dog maxin' and relaxin'.
 
-<img src=../images/piet-in-bed.gif />
+![all cool and all...](/images/piet-in-bed.gif)
