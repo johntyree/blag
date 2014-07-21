@@ -3,6 +3,8 @@ title: MetroRappid for Android
 tags: android atx hack mobile capmetro
 ---
 
+## This app is now defunct! See the [Metrorappid web app][webapp]!
+
 I participated in the [ATX Hack for Change][hfc] hackathon this weekend as part
 of a great team, known in more educated circles as the HackStreetBoyz (my
 initials *are* JT, you know.) We threw together a Google Maps-based Android
@@ -71,3 +73,4 @@ crashes when you're trying to show it to someone, so that's something.
 [data]: https://github.com/luqmaan/MetroRappidData
 [retrofit]: http://square.github.io/retrofit/
 [simple]: http://simple.sourceforge.net/
+[webapp]: 2014-07-20-metrorappidwebapp.html
