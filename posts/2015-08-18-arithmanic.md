@@ -89,7 +89,8 @@ def play():
     return Result(ok=ok, op=op, left=left, right=right, value=a)
 ```
 And we're ready to play! I have a more robust version of this little program on
-my [GitHub](https://github.com/johntyree/arithmanic) page. Check it out. It's
+my [GitHub](https://github.com/johntyree/arithmanic) page. I've called it
+"Arithmanic" because it will introduce time trials soon :). Check it out. It's
 pretty fun.
 
 ```python
