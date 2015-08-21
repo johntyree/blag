@@ -89,7 +89,7 @@ def play():
     return Result(ok=ok, op=op, left=left, right=right, value=a)
 ```
 And we're ready to play! I have a more robust version of this little program on
-my [GitHub](https://github.com/johntyree/arithmanic) page. I've called it
+my [GitHub][arithmanic] page. I've called it
 "Arithmanic" because it will introduce time trials soon :). Check it out. It's
 pretty fun.
 
@@ -133,3 +133,4 @@ $ arithmanic
 
 [math app]: http://www.mathsworkout.net
 [img math app]: /images/mathsworkout.png
+[arithmanic]: https://github.com/johntyree/arithmanic
