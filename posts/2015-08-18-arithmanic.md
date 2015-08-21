@@ -46,7 +46,7 @@ operand values.
 from operator import add, mul, sub, truediv
 operators = {'+': add, '-': sub, 'x': mul, '/': truediv}
 ```
-The `operator` module is obviously very hand here as it gives us normal Python
+The `operator` module is obviously very handy here as it gives us normal Python
 function versions of the standard arithmetic operations `+ - * /`.
 
 ```python
