@@ -118,5 +118,5 @@ results like this.
 Awesome! To check out some other optimizations I've tried checkout the code at
 [GitHub][brnfckr].
 
-[rle]: https://wikipedia.org/wiki/Run_length_encoding
+[rle]: https://en.wikipedia.org/wiki/Run_length_encoding
 [brnfckr]: https://github.com/johntyre/brnfckr/blob/tree/src/BrnFckr/Eval.hs

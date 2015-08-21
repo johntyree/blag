@@ -176,7 +176,7 @@ Ahhhhh... now we're ready to pass this up to Python.
 
 
 [cpp-symbols]: 2013-03-12-cpp_symbols.html
-[thrust]: http://
+[thrust]: https://developer.nvidia.com/thrust
 [cython]: http://cython.org
 [cuda]: http://www.nvidia.com/object/cuda_home_new.html
 [qdc]: https://github.com/johntyree/QDC

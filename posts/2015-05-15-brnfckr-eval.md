@@ -128,5 +128,5 @@ And that's it! Now we can run brainfuck code using our own little interpreter.
 In the next post I'll talk about optimization passes and some ideas for
 speeding it up.
 
-[zipper]: FIXME
-[repo]: https://github.com/johntyree/brnfckr/blob/tree/FIXME
+[zipper]: https://wiki.haskell.org/Zipper
+[repo]: https://github.com/johntyree/brnfckr/blob/master/src/Brnfckr/Eval.hs
