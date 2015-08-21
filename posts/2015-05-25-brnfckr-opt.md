@@ -2,8 +2,7 @@
 title: Brnfckr - An optimizing brainfuck toolchain (Part 3)
 tags: Hack Haskell Compilers Brainfuck
 ---
-
-# Brnfckr - An optimizing brainfuck toolchain (Part 3)
+#Brnfckr - An optimizing brainfuck toolchain (Pt 3) [![](/images/github-logo_32.png)][repo]
 
 In the last post, we sketched out a little interpreter for our brainfuck `Term`
 values. This week I want to talk about some ideas for optimizations we can do
@@ -119,4 +118,5 @@ Awesome! To check out some other optimizations I've tried checkout the code at
 [GitHub][brnfckr].
 
 [rle]: https://en.wikipedia.org/wiki/Run_length_encoding
-[brnfckr]: https://github.com/johntyre/brnfckr/blob/tree/src/BrnFckr/Eval.hs
+[repo]: https://github.com/johntyree/brnfckr
+[brnfckr]: https://github.com/johntyree/brnfckr/blob/master/src/Brnfckr/Eval.hs

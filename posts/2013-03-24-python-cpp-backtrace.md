@@ -3,6 +3,8 @@ title: Getting a Demangled Backtrace out of C++
 tags: C++ C
 ---
 
+# Demangling C++ [![](/images/github-logo_32.png)][qdc]
+
 In a [previous post][cpp-symbols], we looked at how C++ mangles our function
 names when it compiles object files, resulting in symbols that are difficult to
 read and impossible to link non-C++ programs against. Now we'll talk about how
@@ -47,7 +49,7 @@ crazy ideas like
 
 and still expect to finish your project on time. I miss it.
 
-In my thesis work, I adopted [Cython][cython] to bridge the gap
+In my [thesis work][thesis], I adopted [Cython][cython] to bridge the gap
 between an easy and fun library for prototyping Finite Difference problems
 (that's the Python half) and
 a messy reimplementation of some key parts in C++ /
@@ -181,3 +183,4 @@ Ahhhhh... now we're ready to pass this up to Python.
 [cuda]: http://www.nvidia.com/object/cuda_home_new.html
 [qdc]: https://github.com/johntyree/QDC
 [filter]: https://github.com/johntyree/QDC/blob/master/filter.h
+[thesis]: https://github.com/johntyree/fd_adi

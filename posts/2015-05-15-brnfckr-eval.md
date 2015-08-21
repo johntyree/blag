@@ -3,7 +3,7 @@ title: Brnfckr - An optimizing brainfuck toolchain (Part 2)
 tags: Hack Haskell Compilers Brainfuck
 ---
 
-# Brnfckr - An optimizing brainfuck toolchain (Part 2)
+# Brnfckr - An optimizing brainfuck toolchain (Pt 2) [![](/images/github-logo_32.png)][repo]
 
 Last week I introduced the brainfuck language and my strategy for
 parsing it. In this post we'll build an interpreter to evaluate our code. It's
@@ -121,12 +121,13 @@ eval = mapM_ f
 The implementations of each of the other operations is good practice for anyone
 following along at home so I'll leave them off here. If you'd like to sneak a
 glance at how I've implemented them, you can check out the code
-[on GitHub][repo].
+[on GitHub][eval].
 
 And that's it! Now we can run brainfuck code using our own little interpreter.
 
-In the next post I'll talk about optimization passes and some ideas for
-speeding it up.
+In the [next post](2015-05-25-brnfckr-opt.html) I'll talk about optimization
+passes and some ideas for speeding it up.
 
 [zipper]: https://wiki.haskell.org/Zipper
-[repo]: https://github.com/johntyree/brnfckr/blob/master/src/Brnfckr/Eval.hs
+[repo]: https://github.com/johntyree/brnfckr
+[eval]: https://github.com/johntyree/brnfckr/blob/master/src/Brnfckr/Eval.hs

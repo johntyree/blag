@@ -3,6 +3,8 @@ title: Mental math
 tags: Math Python
 ---
 
+# Arithmanic [![](/images/github-logo_32.png)][repo]
+
 Quick, what's 345 / 223?
 
 Who knows? I don't. Mental math is hard. Personally, I'm pretty terrible at it.
@@ -89,7 +91,7 @@ def play():
     return Result(ok=ok, op=op, left=left, right=right, value=a)
 ```
 And we're ready to play! I have a more robust version of this little program on
-my [GitHub][arithmanic] page. I've called it
+my [GitHub][repo] page. I've called it
 "Arithmanic" because it will introduce time trials soon :). Check it out. It's
 pretty fun.
 
@@ -133,4 +135,4 @@ $ arithmanic
 
 [math app]: http://www.mathsworkout.net
 [img math app]: /images/mathsworkout.png
-[arithmanic]: https://github.com/johntyree/arithmanic
+[repo]: https://github.com/johntyree/arithmanic
