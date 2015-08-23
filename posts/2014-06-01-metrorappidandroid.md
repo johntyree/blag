@@ -34,8 +34,9 @@ only be found in CapMetro’s own product
 to expose the API calls that bring down real-time data about the 801 MetroRapid
 and 550 MetroRail routes.
 
-We [documented][docs] those... loosely, and put up some [sample data][data] for
-testing.
+We ~~[documented][docs] those~~ (Sorry! Docs have been taken down as a token of
+good faith towards the city!)... loosely, and put up some [sample data][data]
+for testing.
 
 **Next** we split into two groups, with Sean and Eric working on the Google
 Maps API V2 integration while Luqmaan, Seth, and I tried to figure out how to
