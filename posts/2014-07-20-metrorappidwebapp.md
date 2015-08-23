@@ -14,7 +14,7 @@ Instead, we threw them both in the garbage and made a web app.
 ## Behold, [Instabus][webapp]!
 ####Cloud-scale for distributed web 2.0!
 
-![Its got what busses need. It's got electrolytes!][img_metrorappid]
+[![Its got what busses need. It's got electrolytes!][img_metrorappid small]][img_metrorappid]
 
 
 It doesn't require any installation, behaves nicely on desktops, tablets, and
@@ -31,4 +31,5 @@ Reddit discussion over [here][reddit].
 [reddit]: http://www.reddit.com/r/Austin/comments/2aycmx/we_made_a_webapp_that_lets_you_see_metrorail_and/
 [webapp]: http://instabus.org
 [img_metrorappid]: /images/metrorappid_webapp_full.jpg
-[github]: http://github.com/luqmaan/instabus 
+[img_metrorappid small]: /images/metrorappid_webapp_small.jpg
+[github]: http://github.com/luqmaan/instabus
