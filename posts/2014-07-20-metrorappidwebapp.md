@@ -3,7 +3,7 @@ title: MetroRappid Web App
 tags: atx hack mobile capmetro web
 ---
 
-# ~~Metrorappidd~~ Instabus web App [![](/images/github-logo_32.png)][github]
+# ~~Metrorappid~~ Instabus web App [![](/images/github-logo_32.png)][github]
 
 So we gave up trying fix Google Map auth in the native [Android incarnation of
 MetroRappid][droidapp]. We also weren't super thrilled about having to update
