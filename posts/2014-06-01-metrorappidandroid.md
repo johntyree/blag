@@ -34,8 +34,8 @@ only be found in CapMetro’s own product
 to expose the API calls that bring down real-time data about the 801 MetroRapid
 and 550 MetroRail routes.
 
-We ~~[documented][docs] those~~ (Sorry! Docs have been taken down as a token of
-good faith towards the city!)... loosely, and put up some [sample data][data]
+We ~~[documented][docs] those... loosely~~ (Sorry! Docs have been taken down as a token of
+good faith towards the city!), and put up some [sample data][data]
 for testing.
 
 **Next** we split into two groups, with Sean and Eric working on the Google
@@ -49,8 +49,8 @@ XML.
 the map with annotations and markers from the CapMetro data.
 
 There were, of course, a few iterations on the UI-side before we settled on a
-choice but overall, getting the look and feel how we wanted it was probably the
-easiest part.
+choice, but overall, getting the look and feel how we wanted it was probably
+the easiest part.
 
 The final MetroRappid app is essentially a single screen map view that
 intelligently chooses an appropriate bus stop to display information based
