@@ -19,8 +19,8 @@ were several other city employees there from various offices that need
 technological help solving their problems. It was really nice to get to meet
 these folks as well as to see just why it is that the city government is so
 slow to get anything done. When the only person with the password to the
-database of land deeds gets brain cancer and forgets it\*, it's obviously going
-to take some time to recover that data.
+database of land deeds gets brain cancer and forgets it (*yes, seriously*),
+it's obviously going to take some time to recover that data.
 
 I'd also like to applaud the city's major advancements on the data front. Since
 our somewhat cheeky app last year to scrape real-time bus data from CapMetro's

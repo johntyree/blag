@@ -124,7 +124,7 @@ results like this.
 > compress [ValIncr 1, ValIncr 1, ValIncr 1]
 [ValIncr 3]
 ```
-Awesome! To check out some other optimizations I've tried checkout the code at
+Awesome! To check out some other optimizations I've tried, checkout the code at
 [GitHub][brnfckr].
 
 [rle]: https://en.wikipedia.org/wiki/Run_length_encoding
