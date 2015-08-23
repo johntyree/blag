@@ -9,8 +9,9 @@ values. This week I want to talk about some ideas for optimizations we can do
 on those values to speed things up.
 
 This isn't really about optimizing the *interpreter* itself, just coming up
-with a better representation of the operations themselves so that all
-interpreters will show improvements.
+with a better representation of the operations so that all interpreters will
+show improvements. To rephrase, we're optimizing the program code, not the
+computer.
 
 ## Optimization
 
@@ -39,11 +40,16 @@ To do this we'll have to look for neighboring `ValIncr` values and combine
 them. This gives us our first optimization pass!
 
 Since all of our optimizations will take a list of `[Term]` representing the
-program and return a new, hopefully better list of `[Term]`, I'll be representing
-them as a `fold`. Given a `Term` and the list of `[Term]` so far, we want to
+program and return a new, hopefully better list of `[Term]`, I'll be
+representing them as a [`fold`][]. You might know `fold` as Python's `reduce`,
+but even if you don't, this should make it clear what's going on.
+```haskell
+Prelude> foldr1 (+) [1, 2, 3, 4]
+10
+```
+Given a `Term` and the list of `[Term]` so far, we want to
 return a new list of better `[Term]`. We'll then just fold up our input
 `[Term]` with this function.
-
 ```haskell
 compress :: [Term] -> [Term]
 compress terms = snd $ fix run ([], terms)
@@ -68,16 +74,16 @@ compress terms = snd $ fix run ([], terms)
 ```
 When we're applying our optimization passes, it isn't clear how many times
 we'll need go over the input. In the naive case, you might imagine that in each
-pass over the term list, we combine two `ValIncr` terms, requiring `n-1`
-applications of `compress`. With many other optimizations implemented, this
-because very difficult to track.
+pass over the term list that we will combine two `ValIncr` terms, requiring
+`n-1` applications of `compress`. With many other optimizations implemented,
+this becomes very difficult to track.
 
-Instead let's just think about how we know we're done optimizing. If we can
+Instead, let's just think about how we know we're done optimizing. If we can
 apply all of the optimizations that we have to the code and get the same
 `[Term]` back that we started with, we must be done. It turns out this idea of
 applying a function repeatedly until the value stabilizes is common in the
 study of dynamical systems. Indeed, such a stable value is considered to be a
-"fixed point" of the function. For our problem, we'd like to find a brainfuck
+[fixed point][] of the function. For our problem, we'd like to find a brainfuck
 program that is a fixed point for our optimization function, i.e. a program
 which can be optimized no further.
 
@@ -92,24 +98,28 @@ non-strict evaluation model if the function ever short circuits itself, we will
 "break out" of the loop.
 
 Take another look at `run` above.
+
 ```haskell
 run f (prev, cur) = if cur == prev
                     then (cur, cur)
                     else f (cur, smoosh cur)
 ```
-So if two tuple elements are equal, we stop, otherwise we return a tuple with
-a function applied to the right element. This is perfect for use with `fix`.
-It will continue to apply the `smoosh` function up until the output no longer
-changes. Now we just need `smoosh` to implement a single optimization pass,
-which it does by folding our optimizing function over the `[Term]` of the
-program.
+
+So if the two tuple elements are equal, we stop and return them, otherwise we
+we optimise the right element and apply `f` to the whole thing. This is perfect
+for use with `fix`. It will continue to apply the `smoosh` function up until
+the output no longer changes. Now we just need `smoosh` to implement a single
+optimization pass, which it does by folding our optimizing function over the
+`[Term]` of the program.
 
 ```haskell
 smoosh :: [Term] -> [Term]
 smoosh = foldr go []
 ```
-Together these compute the fixed point of our optimization function and we get
+
+Together, these compute the fixed point of our optimization function and we get
 results like this.
+
 ```haskell
 > compress [ValIncr 1, ValIncr 1, ValIncr 1]
 [ValIncr 3]
@@ -120,3 +130,5 @@ Awesome! To check out some other optimizations I've tried checkout the code at
 [rle]: https://en.wikipedia.org/wiki/Run_length_encoding
 [repo]: https://github.com/johntyree/brnfckr
 [brnfckr]: https://github.com/johntyree/brnfckr/blob/master/src/Brnfckr/Eval.hs
+[`fold`]: https://en.wikipedia.org/wiki/Fold_(higher-order_function)
+[fixed point]: https://en.wikipedia.org/wiki/Fixed_point_(mathematics)

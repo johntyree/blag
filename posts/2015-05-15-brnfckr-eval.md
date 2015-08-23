@@ -123,7 +123,23 @@ following along at home so I'll leave them off here. If you'd like to sneak a
 glance at how I've implemented them, you can check out the code
 [on GitHub][eval].
 
+You might notice from the type of `eval` there that we haven't actually *run*
+anything yet. What we've done is to construct a brainfuck computation as a
+giant function. We need one more function to invoke it with some STDIN data.
+The `runBrainFuck` function below takes a brainfuck program as a string, STDIN
+as a string and evaluates it to produce either an error or the terminal state
+of the machine, as well as any output that was gathered along the way.
+```haskell
+*Brnfckr.Eval> :t runBrainFuck
+runBrainFuck :: String -> String -> ((Either BrainFuckError (), World), String)
+```
 And that's it! Now we can run brainfuck code using our own little interpreter.
+
+```haskell
+*Brnfckr.Eval> runBrainFuck "++++++++[>++++++<-]>." ""
+((Right (),World { [ 0 0 0  48  0 0 0 ] [] }),"0")
+it :: ((Either BrainFuckError (), World), String)
+```
 
 In the [next post](2015-05-25-brnfckr-opt.html) I'll talk about optimization
 passes and some ideas for speeding it up.

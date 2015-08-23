@@ -9,7 +9,7 @@ Quick, what's 345 / 223?
 
 Who knows? I don't. Mental math is hard. Personally, I'm pretty terrible at it.
 
-It's useful though and so I decided it was time to improve. My first step was
+It's useful though, and so I decided it was time to improve. My first step was
 to buy a little Android app called [Math Workout][math app]. It's a simple app,
 but it's also a joy to use. Kudos to them and I hope they are making money off
 of it.
@@ -57,10 +57,10 @@ def choose_operands(left_range, right_range):
     return (left, right)
 ```
 
-So now we have a way to choose individually bounded operands (to divide large
-numbers by small numbers, for example) but we still need to present the
+So now we have a way to choose individually bounded operands, to divide large
+numbers by small numbers, for example, but we still need to present the
 challenge to the user somehow. I've elected to represent the question and
-answer as a string and a value, for easy printing and validation of the
+answer as a string and a numeric value, for easy printing and validation of the
 response.
 
 ```python
