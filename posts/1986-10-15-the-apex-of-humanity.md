@@ -2,11 +2,13 @@
 title: The Apex of Humanity
 ---------------------------
 
+# The Apex of Humanity
+
 is born.
 
 Hah!
 
-No really though. Think about it. 4 billion years and here I am.
+No really though. Think about it. Four billion years and here I am.
 
 Ahhhhh......
 
